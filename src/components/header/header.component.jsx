@@ -1,4 +1,5 @@
 import React from 'react';
+import Navbar from '../navigation/navbar.component';
 import './header.styles.scss';
 import logoUrl from '../../assets/brock_logo.png';
 const Header = () => (
@@ -6,6 +7,7 @@ const Header = () => (
     <a href='/'>
       <img src={logoUrl} alt="Brock" />
     </a>
+    <Navbar/>
   </div>
 )
 export default Header;
