@@ -1,0 +1,32 @@
+.employee-card-container {
+    display: list-item;
+    flex-direction: column;
+    background-color: #af7a7a;
+    border: 1px solid #c1272e;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+  }
+  
+  .employee-card-container:hover {
+    transform: scale(1.05);
+  }
+
+.employee-image {
+  display: flex;
+  align-items: left;
+
+  .employee-details {
+    margin-left: 15px;
+    text-align: left;
+    font-size: small;
+  }
+
+
+
+}
+  

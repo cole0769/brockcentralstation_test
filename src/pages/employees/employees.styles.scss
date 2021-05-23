@@ -1,10 +1,18 @@
-.Employee {
-    text-align: center;
-  }
-  
-  h1 {
+.employee-container {
+    display: inline-block;
+    
+  .container-header {
+    font-size: 18px;
     font-family: 'Bigelow Rules';
-    font-size: 72px;
-    color: black;
   }
   
+  .container-subheader {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+
+    .employee-search {
+      float:right
+    }
+  }
+}

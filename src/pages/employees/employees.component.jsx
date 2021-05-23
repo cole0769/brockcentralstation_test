@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import { EmployeeCardList } from './employee.card-list.component';
+import { EmployeeCardList } from './employee-card-list/employee.card-list.component';
 import { SearchBox }  from '../../components/search-box/search-box.component';
+import ToggleSwitch from '../../components/toggle-switch/toggle-switch.component';
+import './employees.styles.scss'
 
   class Employee extends Component {
     constructor() {
@@ -29,9 +31,20 @@ import { SearchBox }  from '../../components/search-box/search-box.component';
       );
   
       return (
-        <div className='Employee'>
-          <h1>Company Rolodex</h1>
-          <SearchBox onSearchChange={this.onSearchChange} />
+        <div className='employee-container' >
+          <div className="container-header" >
+            <h1>Company Rolodex</h1>
+              <div className="container-subheader" >
+                  <div class="button-selection">
+                    <button onclick="listView()"><i class="fa fa-bars"></i> List</button>
+                    <button onclick="gridView()"><i class="fa fa-th-large"></i> Grid</button>
+                    {/* <ToggleSwitch toggleName='List' /> */}
+                  </div>
+                  <div className="employee-search" >
+                    <SearchBox onSearchChange={this.onSearchChange} />
+                  </div>
+              </div>
+          </div>
           <EmployeeCardList employees={filteredEmployees} />
         </div>
       );
