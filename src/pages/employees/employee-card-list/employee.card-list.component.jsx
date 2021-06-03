@@ -1,5 +1,5 @@
 import React from 'react';
-import { EmployeeList } from '../employee.list.component';
+import { EmployeeList } from '../employee-list/employee.list.component';
 import './employee.card-list.styles.scss';
 
 export const EmployeeCardList = props => (
@@ -9,3 +9,4 @@ export const EmployeeCardList = props => (
             ))} 
         </div>
 );
+ 

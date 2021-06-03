@@ -3,7 +3,7 @@ import React from "react";
 const ReportsPage = () => {
     return(
         <div className='reports-page'>
-            <a1>Reporting Library</a1>
+            <h1>Reporting Library</h1>
         </div>
     );
 };

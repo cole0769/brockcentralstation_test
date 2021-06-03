@@ -10,9 +10,31 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    
+    .button-spacer{
+      width:5px;
+      height:auto;
+      display:inline-block;
+    }
 
     .employee-search {
+      display: flex;
+      height: 25px;
       float:right
+    
+      .search-spacer{
+        width:5px;
+        height:auto;
+        display:inline-block;
+      }
     }
   }
+    
+  .employee-table-view {
+    display: grid;
+  }
+  .employee-list-view {
+    display: flex;
+  }
+
 }
