@@ -1,0 +1,19 @@
+.news {
+    display: flexbox;
+    padding: 10px 10px 10px 10px;
+    text-align: left;
+    
+
+    .article {
+        border-bottom: 1px solid #4f4f4f;
+        margin-bottom: 5px;
+    } 
+
+    .dateline {
+        font-size: small;
+    }
+
+    .article:hover {
+    box-shadow: 2px 3px 5px rgba($color: #7c7c7c, $alpha: 1.0);    
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "newsFeed": [
+        {
+            "title": "Welcome to Brock Central Station",
+            "body": "We've provided a transit station for you to locate your departure platform and quickly travel to your destination. All aboard!",
+            "bodyType": "text",
+            "author": "Coleman Gardner",
+            "status": "live",
+            "createdUTC": "2021-06-01T13:20:21.130Z",
+            "EditedUTC": "2021-06-01T13:20:21.130Z",
+            "ExpiresUTC": "2021-12-01T13:20:21.130Z",
+            "id": 1
+        }
+    ]
+}

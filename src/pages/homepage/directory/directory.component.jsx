@@ -1,6 +1,7 @@
 import React from 'react';
 import MenuItem from '../../../components/menu-item/menu-item.components';
 import menuChartImage from '../../../assets/chart-map-pie.png';
+import newsFeedImage from '../../../assets/news-image-01.jpg';
 
 import './directory.styles.scss';
 
@@ -29,11 +30,11 @@ class Directory extends React.Component {
                   linkUrl: 'employees'
                 },
                 {
-                  title: 'womens',
-                  imageUrl: 'https://i.ibb.co/GCCdy8t/womens.png',
+                  title: 'News',
+                  imageUrl: `${newsFeedImage}`,
                   size: 'large',
                   id: 4,
-                  linkUrl: 'shop/womens'
+                  linkUrl: 'news'
                 },
                 {
                   title: 'mens',

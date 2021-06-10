@@ -1,0 +1,44 @@
+.add-employee-form {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: center;
+    
+    h3 {
+        text-align: left;
+        color: darkblue;
+        margin-bottom: 15px;
+    }
+
+    label {
+        text-align: left;
+        display: block;
+    }
+
+    input, textarea, select {
+        width: 100%;
+        padding: 6px 10px;
+        margin-top: 1px;
+        margin-bottom: 5px;
+        border: 1px solid red;
+        box-sizing: border-box;
+        display: block;
+    }
+
+    button {
+        background: darkblue;
+        color: #ffffff;
+        border: 0;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    button:hover{
+        background: lightblue;
+        color: #000000;
+        border: 0;
+        padding: 8px;
+        border-radius: 8px;
+        cursor: pointer;
+    }
+}

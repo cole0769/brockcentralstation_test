@@ -7,7 +7,8 @@ import HomePage from './pages/homepage/homepage.component';
 import Employee from './pages/employees/employees.component';
 import AppLibrary from './pages/app-library/app-library.component';
 import ReportsPage from './pages/reports/reports.component';
-
+import EmployeeAddForm from './pages/employees/employee-add/employee-add-form.component';
+import NewsFeed from './pages/news/company-news/news.component';
 class App extends Component {
   render() {
     return (
@@ -18,6 +19,8 @@ class App extends Component {
           <Route exact path='/app-library' component={AppLibrary} />
           <Route exact path='/reports' component={ReportsPage} />
           <Route exact path='/employees' component={Employee} />
+          <Route exact path='/employees/employee-add' component={EmployeeAddForm} />
+          <Route exact path='/news' component={NewsFeed} />
         </Switch> 
       </div>
     );

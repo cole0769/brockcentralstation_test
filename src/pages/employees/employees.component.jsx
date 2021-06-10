@@ -2,19 +2,21 @@ import React, { Component } from 'react';
 import { EmployeeCardList } from './employee-card-list/employee.card-list.component';
 import { EmployeeCardGrid }  from './employee-card-grid/employee.card-grid.component';
 import { SearchBox }  from '../../components/search-box/search-box.component';
+import { ModalPopup } from '../../components/modal-popup/modal.popup.component';
 // import ToggleSwitch from '../../components/toggle-switch/toggle-switch.component';
 import './employees.styles.scss'
 
 class Employee extends Component {
     constructor() {
         super();
-
-        this.state = {employees: [],  searchField: '', layout: 'card-view' };
+        
+        this.state = {employees: [],  searchField: '', layout: 'card-view', addUserPopup: '!isOpen' };
 
         this.handleGridLayout = this.handleGridLayout.bind(this);
         this.handleListLayout = this.handleListLayout.bind(this);
+        this.handleAddUser = this.handleAddUser.bind(this);
     }
-
+    
     componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/users')
         .then(response => response.json())
@@ -22,6 +24,10 @@ class Employee extends Component {
     }
     onSearchChange = event => {
         this.setState({ searchField: event.target.value });
+    }
+
+    handleAddUser() {
+        this.setState({addUserPopup: 'isOpen'})
     }
 
     handleGridLayout() {
@@ -54,7 +60,8 @@ class Employee extends Component {
                 <div className="employee-search" >
                     <SearchBox onSearchChange={this.onSearchChange} />
                     <div className='search-spacer' />
-                    <button onClick={this.handleListLayout}><i class="fa fa-plus"></i> Add User</button>
+                    {/* add user */}
+                    <button onClick={this.handleAddUser}><i class="fa fa-plus"></i> Add User</button>
                 </div>
             </div>
         </div>
@@ -80,7 +87,7 @@ class Employee extends Component {
                     <div className="employee-search" >
                         <SearchBox onSearchChange={this.onSearchChange} />
                         <div className='search-spacer' />
-                        <button onClick={this.handleListLayout}><i class="fa fa-plus"></i> Add User</button>
+                        <button onClick={this.handleAddUser}><i class="fa fa-plus"></i> Add User</button>
                     </div>
                 </div>
             </div>
