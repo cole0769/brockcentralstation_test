@@ -1,0 +1,23 @@
+
+
+/*
+employee.component.jsx
+This class is the Employee Page titled Company Rolodex.
+It has a sub header below tge global header.
+There are 2 seperate view options: List or Grid.
+The results can be filtered with a Search Box
+A new user can be added
+
+referenced components include:
+
+employee: layout of the Employee page described as Company Rolodex.
+employee-add-form: structured inputs for the add user button
+employee-edit-form: structured inputs for editing user details
+employee-delete-form: No inputs, just logic to set the employee record to archvie so that it no longer displays. There will npt be any actual delete.
+employee-card: individual employee details in a card structure
+employee-list: individual employee details in a list structure
+employee-card-list: provides the structure for displaying employees as a list
+employee-card-grid: provides the structure for displaying employees as a grid
+
+
+*/

@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { EmployeeCardList } from './employee-card-list/employee.card-list.component';
 import { EmployeeCardGrid }  from './employee-card-grid/employee.card-grid.component';
 import { SearchBox }  from '../../components/search-box/search-box.component';
-import { ModalPopup } from '../../components/modal-popup/modal.popup.component';
+import Modal from '../../components/modal/modal.component';
+import EmployeeAddForm from '../../pages/employees/employee-add/employee-add-form.component'
 // import ToggleSwitch from '../../components/toggle-switch/toggle-switch.component';
 import './employees.styles.scss'
 
@@ -10,11 +11,12 @@ class Employee extends Component {
     constructor() {
         super();
         
-        this.state = {employees: [],  searchField: '', layout: 'card-view', addUserPopup: '!isOpen' };
+        this.state = {employees: [],  searchField: '', layout: 'card-view', show: false };
 
         this.handleGridLayout = this.handleGridLayout.bind(this);
         this.handleListLayout = this.handleListLayout.bind(this);
-        this.handleAddUser = this.handleAddUser.bind(this);
+        this.showAddUserModal = this.showAddUserModal.bind(this);
+        this.hideAddUserModal = this.hideAddUserModal.bind(this);
     }
     
     componentDidMount() {
@@ -24,26 +26,28 @@ class Employee extends Component {
     }
     onSearchChange = event => {
         this.setState({ searchField: event.target.value });
-    }
+    };
 
-    handleAddUser() {
-        this.setState({addUserPopup: 'isOpen'})
-    }
+    showAddUserModal = () => {
+        this.setState({show: true});
+    };
+
+    hideAddUserModal = () => {
+        this.setState({show: false});
+    };
 
     handleGridLayout() {
-        this.setState({layout: 'card-view'})
-    }
+        this.setState({layout: 'card-view'});
+    };
 
     handleListLayout() {
-        this.setState({layout: 'list-view'})
-    }
+        this.setState({layout: 'list-view'});
+    };
 
     render() {
         const { employees, searchField } = this.state;
-        const filteredEmployees = employees.filter(employee =>
-        employee.name.toLowerCase().includes(searchField.toLowerCase()
-        )
-    );
+        const filteredEmployees = employees.filter(employee => employee.name.toLowerCase().includes(searchField.toLowerCase()));
+        
     //   list view of employees
     if(this.state.layout === 'list-view') {
     return (
@@ -61,12 +65,15 @@ class Employee extends Component {
                     <SearchBox onSearchChange={this.onSearchChange} />
                     <div className='search-spacer' />
                     {/* add user */}
-                    <button onClick={this.handleAddUser}><i class="fa fa-plus"></i> Add User</button>
+                    <button type = "button" onClick={this.showAddUserModal}><i class="fa fa-plus"></i> Employee</button>
                 </div>
             </div>
         </div>
         <div className="employee-list-view">
             <EmployeeCardList employees={filteredEmployees} />
+            <Modal show={this.state.show} handleClose={this.hideModal}>
+                <EmployeeAddForm/>
+            </Modal>
         </div>
         </div>
     );
@@ -87,12 +94,15 @@ class Employee extends Component {
                     <div className="employee-search" >
                         <SearchBox onSearchChange={this.onSearchChange} />
                         <div className='search-spacer' />
-                        <button onClick={this.handleAddUser}><i class="fa fa-plus"></i> Add User</button>
+                        <button type = "button" onClick={this.showAddUserModal}><i class="fa fa-plus"></i> Employee</button>
                     </div>
                 </div>
             </div>
             <div className="employee-table-view">
                 <EmployeeCardGrid employees={filteredEmployees} />
+                < Modal show={this.state.show} handleClose={this.hideModal} closeText="X">
+                    <EmployeeAddForm/>
+                </Modal>
             </div>
             </div>
         );

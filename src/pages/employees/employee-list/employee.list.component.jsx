@@ -8,9 +8,9 @@ export const EmployeeList = props => (
             <img alt={props.employee.name} src={`https:/robohash.org/${props.employee.id}?set=set1&size=90x90`} />
             <div className='employee-name'>
                 <h1> {props.employee.name} </h1>
+                <h5>role: {props.employee.role} </h5> 
             </div>
             <div className="employee-details">
-                <p> {props.employee.role} </p>
                 <p> email: {props.employee.email} </p>
                 <p> division: {props.employee.company.name} </p>
                 <p> location: {props.employee.address.city} </p>

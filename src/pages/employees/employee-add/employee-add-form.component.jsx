@@ -87,12 +87,12 @@ const EmployeeAddForm  = () => {
                         value={bio}
                     /> 
                 <button>Add Employee</button>
-                <p>{name}</p>
+                {/* <p>{name}</p>
                 <p>{role} for {department} department located in {location}</p>
                 <p>{tagline}</p>
                 <p>hired: {hired}</p>
                 <p>Born: {birthdate}</p>
-                <p>Bio: {bio}</p>
+                <p>Bio: {bio}</p> */}
             </form>
         </div>
 
